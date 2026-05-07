@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    
+    <!-- 左1 -->
+    <flow id="f0" type="DEFAULT_VEHTYPE" from="E5" to="E17" begin="0" end="1000" vehsPerHour="1800" departLane="best" departSpeed="max"/>
+    <flow id="f1" type="DEFAULT_VEHTYPE" from="-E17" to="-E5" begin="0" end="1000" vehsPerHour="1800" departLane="best" departSpeed="max"/>
+    <flow id="f1_1" type="DEFAULT_VEHTYPE" from="-E17" to="-E0" begin="0" end="1000" vehsPerHour="1800" departLane="best" departSpeed="max"/>
+    <flow id="f1_2" type="DEFAULT_VEHTYPE" from="-E17" to="-E1" begin="0" end="1000" vehsPerHour="1800" departLane="best" departSpeed="max"/>
+    <flow id="f0_1" type="DEFAULT_VEHTYPE" from="E5" to="E21" begin="0" end="1000" vehsPerHour="1800" departLane="best" departSpeed="max"/>
+
+    <!-- 下1 -->
+    <flow id="f2" type="DEFAULT_VEHTYPE" from="E1" to="E34" begin="0" end="1000" vehsPerHour="1800" departLane="best" departSpeed="max"/>
+    <flow id="f3" type="DEFAULT_VEHTYPE" from="-E34" to="-E1" begin="0" end="1000" vehsPerHour="1800" departLane="best" departSpeed="max"/>
+    <!-- 右1 -->
+    <flow id="f4" type="DEFAULT_VEHTYPE" from="-E4" to="195743187#16" begin="0" end="1000" vehsPerHour="1800" departLane="best" departSpeed="max"/>
+    <flow id="f5" type="DEFAULT_VEHTYPE" from="E47" to="E4" begin="0" end="1000" vehsPerHour="1800" departLane="best" departSpeed="max"/>
+    
+    <!-- 行人 -->
+    <vType id="ped" vClass="pedestrian" width="0.6" length="0.5" color="0,0,1"/>
+    <!-- 1 -->
+    <!-- E5 <-> E6 -->
+    <personFlow id="p_E5_E6" type="ped" begin="0" end="1000" personsPerHour="200" departPos="23">
+        <personTrip from="E5" to="E6"/>
+    </personFlow>
+    <personFlow id="p_E6_E5" type="ped" begin="0" end="1000" personsPerHour="200" departPos="35">
+        <personTrip from="E6" to="E5"/>
+    </personFlow>
+    <!-- -E5 <-> -E6 -->
+    <personFlow id="p_nE5_nE6" type="ped" begin="0" end="1000" personsPerHour="200" departPos="23">
+        <personTrip from="-E5" to="-E6"/>
+    </personFlow>
+    <personFlow id="p_nE6_nE5" type="ped" begin="0" end="1000" personsPerHour="200" departPos="35">
+        <personTrip from="-E6" to="-E5"/>
+    </personFlow>
+    <!-- E1 <-> E32 -->
+    <personFlow id="p_E1_E32" type="ped" begin="0" end="1000" personsPerHour="200" departPos="57.5">
+        <personTrip from="E1" to="E32"/>
+    </personFlow>
+    <personFlow id="p_E32_E1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="122.56">
+        <personTrip from="E32" to="E1"/>
+    </personFlow>
+    <!-- -E1 <-> -E32 -->
+    <personFlow id="p_nE1_nE32" type="ped" begin="0" end="1000" personsPerHour="200" departPos="57.5">
+        <personTrip from="-E1" to="-E32"/>
+    </personFlow>
+    <personFlow id="p_nE32_nE1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="122.56">
+        <personTrip from="-E32" to="-E1"/>
+    </personFlow>
+
+    <!-- 2 -->
+    <!-- E21 <-> 5671446#1 -->
+    <personFlow id="p_E21_5671446_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="67">
+        <personTrip from="E21" to="5671446#1"/>
+    </personFlow>
+    <personFlow id="p_5671446_1_E21" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.93">
+        <personTrip from="5671446#1" to="E21"/>
+    </personFlow>
+    <!-- E6 <-> -E7 -->
+    <personFlow id="p_E6_nE7" type="ped" begin="0" end="1000" personsPerHour="200" departPos="35.97">
+        <personTrip from="E6" to="-E7"/>
+    </personFlow>
+    <personFlow id="p_nE7_E6" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.6">
+        <personTrip from="-E7" to="E6"/>
+    </personFlow>
+    <!-- -E6 <-> E7 -->
+    <personFlow id="p_nE6_E7" type="ped" begin="0" end="1000" personsPerHour="200" departPos="35.97">
+        <personTrip from="-E6" to="E7"/>
+    </personFlow>
+    <personFlow id="p_E7_nE6" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.6">
+        <personTrip from="E7" to="-E6"/>
+    </personFlow>
+
+    <!-- 3 -->
+    <!-- E31 <-> 5670544#1 -->
+    <personFlow id="p_E31_5670544_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.74">
+        <personTrip from="E31" to="5670544#1"/>
+    </personFlow>
+    <personFlow id="p_5670544_1_E31" type="ped" begin="0" end="1000" personsPerHour="200" departPos="72.77">
+        <personTrip from="5670544#1" to="E31"/>
+    </personFlow>
+
+    <!-- E7 <-> -E8 -->
+    <personFlow id="p_E7_nE8" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.57">
+        <personTrip from="E7" to="-E8"/>
+    </personFlow>
+    <personFlow id="p_nE8_E7" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.57">
+        <personTrip from="-E8" to="E7"/>
+    </personFlow>
+
+    <!-- -E7 <-> E8 -->
+    <personFlow id="p_nE7_E8" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.57">
+        <personTrip from="-E7" to="E8"/>
+    </personFlow>
+    <personFlow id="p_E8_nE7" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.57">
+        <personTrip from="E8" to="-E7"/>
+    </personFlow>
+
+    <!-- 4 -->
+    <!-- 980924794#1 <-> 658579519#1 -->
+    <personFlow id="p_980924794_1_658579519_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="83.21">
+        <personTrip from="980924794#1" to="658579519#1"/>
+    </personFlow>
+
+    <personFlow id="p_658579519_1_980924794_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.78">
+        <personTrip from="658579519#1" to="980924794#1"/>
+    </personFlow>
+
+    <!-- -E9 <-> -E8 -->
+    <personFlow id="p_nE9_nE8" type="ped" begin="0" end="1000" personsPerHour="200" departPos="34.51">
+        <personTrip from="-E9" to="-E8"/>
+    </personFlow>
+
+    <personFlow id="p_nE8_nE9" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.57">
+        <personTrip from="-E8" to="-E9"/>
+    </personFlow>
+
+    <!-- E9 <-> E8 -->
+    <personFlow id="p_E9_E8" type="ped" begin="0" end="1000" personsPerHour="200" departPos="34.51">
+        <personTrip from="E9" to="E8"/>
+    </personFlow>
+
+    <personFlow id="p_E8_E9" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.57">
+        <personTrip from="E8" to="E9"/>
+    </personFlow>
+
+    <!-- 5 -->
+    <personFlow id="p_E9_E10" type="ped" begin="0" end="1000" personsPerHour="200" departPos="34.51">
+        <personTrip from="E9" to="E10"/>
+    </personFlow>
+
+    <personFlow id="p_E10_E9" type="ped" begin="0" end="1000" personsPerHour="200" departPos="37.26">
+        <personTrip from="E10" to="E9"/>
+    </personFlow>
+
+    <personFlow id="p_nE9_nE10" type="ped" begin="0" end="1000" personsPerHour="200" departPos="34.51">
+        <personTrip from="-E9" to="-E10"/>
+    </personFlow>
+
+    <personFlow id="p_nE10_nE9" type="ped" begin="0" end="1000" personsPerHour="200" departPos="37.26">
+        <personTrip from="-E10" to="-E9"/>
+    </personFlow>
+
+    <personFlow id="p_5672656_2_5672656_6" type="ped" begin="0" end="1000" personsPerHour="200" departPos="61.12">
+        <personTrip from="5672656#2" to="5672656#6"/>
+    </personFlow>
+
+    <personFlow id="p_5672656_6_5672656_2" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121">
+        <personTrip from="5672656#6" to="5672656#2"/>
+    </personFlow>
+
+    <!-- 6 横向的有疑问-->
+    <personFlow id="p_E11_E10" type="ped" begin="0" end="1000" personsPerHour="200" departPos="195">
+        <personTrip from="E11" to="E10"/>
+    </personFlow>
+
+    <personFlow id="p_E10_E11" type="ped" begin="0" end="1000" personsPerHour="200" departPos="37.26">
+        <personTrip from="E10" to="E11"/>
+    </personFlow>
+
+    <personFlow id="p_nE11_nE10" type="ped" begin="0" end="1000" personsPerHour="200" departPos="195">
+        <personTrip from="-E11" to="-E10"/>
+    </personFlow>
+
+    <personFlow id="p_nE10_nE11" type="ped" begin="0" end="1000" personsPerHour="200" departPos="37.26">
+        <personTrip from="-E10" to="-E11"/>
+    </personFlow>
+
+    <!-- 7 -->
+    <personFlow id="p_E13_E11" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.77">
+        <personTrip from="E13" to="E11"/>
+    </personFlow>
+    <personFlow id="p_E11_E13" type="ped" begin="0" end="1000" personsPerHour="200" departPos="195">
+        <personTrip from="E11" to="E13"/>
+    </personFlow>
+
+    <personFlow id="p_nE13_nE11" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.77">
+        <personTrip from="-E13" to="-E11"/>
+    </personFlow>
+    <personFlow id="p_nE11_nE13" type="ped" begin="0" end="1000" personsPerHour="200" departPos="195">
+        <personTrip from="-E11" to="-E13"/>
+    </personFlow>
+
+    <personFlow id="p_196117063_1_nE12" type="ped" begin="0" end="1000" personsPerHour="200" departPos="41.35">
+        <personTrip from="196117063#1" to="-E12"/>
+    </personFlow>
+    <personFlow id="p_nE12_196117063_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="122.13">
+        <personTrip from="-E12" to="196117063#1"/>
+    </personFlow>
+
+    <personFlow id="p_n196117063_1_E12" type="ped" begin="0" end="1000" personsPerHour="200" departPos="41.35">
+        <personTrip from="-196117063#1" to="E12"/>
+    </personFlow>
+    <personFlow id="p_E12_n196117063_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="122.13">
+        <personTrip from="E12" to="-196117063#1"/>
+    </personFlow>
+
+    <!-- 8 横向的有疑问-->
+    <personFlow id="p_E13_E14" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.77">
+        <personTrip from="E13" to="E14"/>
+    </personFlow>
+
+    <personFlow id="p_E14_E13" type="ped" begin="0" end="1000" personsPerHour="200" departPos="33.19">
+        <personTrip from="E14" to="E13"/>
+    </personFlow>
+
+    <personFlow id="p_nE13_nE14" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.77">
+        <personTrip from="-E13" to="-E14"/>
+    </personFlow>
+
+    <personFlow id="p_nE14_nE13" type="ped" begin="0" end="1000" personsPerHour="200" departPos="33.19">
+        <personTrip from="-E14" to="-E13"/>
+    </personFlow>
+
+    <!-- 9 -->
+    <personFlow id="p_E14_-E15" type="ped" begin="0" end="1000" personsPerHour="200" departPos="33.19">
+        <personTrip from="E14" to="-E15"/>
+    </personFlow>
+    <personFlow id="p_-E15_E14" type="ped" begin="0" end="1000" personsPerHour="200" departPos="116.5">
+        <personTrip from="-E15" to="E14"/>
+    </personFlow>
+
+    <personFlow id="p_nE14_-E15" type="ped" begin="0" end="1000" personsPerHour="200" departPos="33.19">
+        <personTrip from="-E14" to="E15"/>
+    </personFlow>
+    <personFlow id="p_n-E15_E14" type="ped" begin="0" end="1000" personsPerHour="200" departPos="116.5">
+        <personTrip from="E15" to="-E14"/>
+    </personFlow>
+
+    <!-- 1043350179#1 <-> 5672571#1 -->
+    <personFlow id="p_43350179_1_5672571_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="42.26">
+        <personTrip from="1043350179#1" to="5672571#1"/>
+    </personFlow>
+
+    <personFlow id="p_5672571_1_43350179_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.57">
+        <personTrip from="5672571#1" to="1043350179#1"/>
+    </personFlow>
+
+    <!-- -1043350179#1 <-> -5672571#1 -->
+    <personFlow id="p_n43350179_1_n5672571_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="42.26">
+        <personTrip from="-1043350179#1" to="-5672571#1"/>
+    </personFlow>
+
+    <personFlow id="p_n5672571_1_n43350179_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.57">
+        <personTrip from="-5672571#1" to="-1043350179#1"/>
+    </personFlow>
+
+    <!-- 10 -->
+    <!-- E15 <-> E16 -->
+    <personFlow id="p_E15_E16" type="ped" begin="0" end="1000" personsPerHour="200" departPos="116.55">
+        <personTrip from="E15" to="E16"/>
+    </personFlow>
+
+    <personFlow id="p_E16_E15" type="ped" begin="0" end="1000" personsPerHour="200" departPos="106.23">
+        <personTrip from="E16" to="E15"/>
+    </personFlow>
+
+    <!-- -E15 <-> -E16 -->
+    <personFlow id="p_nE15_nE16" type="ped" begin="0" end="1000" personsPerHour="200" departPos="116.55">
+        <personTrip from="-E15" to="-E16"/>
+    </personFlow>
+
+    <personFlow id="p_nE16_nE15" type="ped" begin="0" end="1000" personsPerHour="200" departPos="106.23">
+        <personTrip from="-E16" to="-E15"/>
+    </personFlow>
+
+    <!-- 5668986#8 <-> 5668986#2 -->
+    <personFlow id="p_5668986_8_5668986_2" type="ped" begin="0" end="1000" personsPerHour="200" departPos="43.07">
+        <personTrip from="5668986#8" to="5668986#2"/>
+    </personFlow>
+
+    <personFlow id="p_5668986_2_5668986_8" type="ped" begin="0" end="1000" personsPerHour="200" departPos="120.52">
+        <personTrip from="5668986#2" to="5668986#8"/>
+    </personFlow>
+
+    <!-- -5668986#8 <-> -5668986#2 -->
+    <personFlow id="p_n5668986_8_n5668986_2" type="ped" begin="0" end="1000" personsPerHour="200" departPos="43.07">
+        <personTrip from="-5668986#8" to="-5668986#2"/>
+    </personFlow>
+
+    <personFlow id="p_n5668986_2_n5668986_8" type="ped" begin="0" end="1000" personsPerHour="200" departPos="120.52">
+        <personTrip from="-5668986#2" to="-5668986#8"/>
+    </personFlow>
+
+    <!-- 11 -->
+    <!-- E17 <-> E16 -->
+    <personFlow id="p_E17_E16" type="ped" begin="0" end="1000" personsPerHour="200" departPos="22.76">
+        <personTrip from="E17" to="E16"/>
+    </personFlow>
+
+    <personFlow id="p_E16_E17" type="ped" begin="0" end="1000" personsPerHour="200" departPos="106.23">
+        <personTrip from="E16" to="E17"/>
+    </personFlow>
+
+    <!-- -E17 <-> -E16 -->
+    <personFlow id="p_nE17_nE16" type="ped" begin="0" end="1000" personsPerHour="200" departPos="22.76">
+        <personTrip from="-E17" to="-E16"/>
+    </personFlow>
+
+    <personFlow id="p_nE16_nE17" type="ped" begin="0" end="1000" personsPerHour="200" departPos="106.23">
+        <personTrip from="-E16" to="-E17"/>
+    </personFlow>
+
+
+    <!-- E0 <-> -420881463#0 -->
+    <personFlow id="p_E0_n420881463_0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="85.12">
+        <personTrip from="E0" to="-420881463#0"/>
+    </personFlow>
+
+    <personFlow id="p_n420881463_0_E0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="132.85">
+        <personTrip from="-420881463#0" to="E0"/>
+    </personFlow>
+
+    <!-- -E0 <-> 420881463#0 -->
+    <personFlow id="p_nE0_420881463_0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="85.12">
+        <personTrip from="-E0" to="420881463#0"/>
+    </personFlow>
+
+    <personFlow id="p_420881463_0_nE0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="132.85">
+        <personTrip from="420881463#0" to="-E0"/>
+    </personFlow>
+
+    <!-- a-1 -->
+    <!-- 421505920#0 <-> E18 -->
+    <personFlow id="p_421505920_0_E18" type="ped" begin="0" end="1000" personsPerHour="200" departPos="21.68">
+        <personTrip from="421505920#0" to="E18"/>
+    </personFlow>
+
+    <personFlow id="p_E18_421505920_0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="38.17">
+        <personTrip from="E18" to="421505920#0"/>
+    </personFlow>
+
+    <!-- -421505920#0 <-> -E18 -->
+    <personFlow id="p_n421505920_0_nE18" type="ped" begin="0" end="1000" personsPerHour="200" departPos="21.68">
+        <personTrip from="-421505920#0" to="-E18"/>
+    </personFlow>
+
+    <personFlow id="p_nE18_n421505920_0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="38.17">
+        <personTrip from="-E18" to="-421505920#0"/>
+    </personFlow>
+
+
+    <!-- 420881463#0 <-> 420881464 -->
+    <personFlow id="p_420881463_0_420881464" type="ped" begin="0" end="1000" personsPerHour="200" departPos="132.85">
+        <personTrip from="420881463#0" to="420881464"/>
+    </personFlow>
+
+    <personFlow id="p_420881464_420881463_0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="136.24">
+        <personTrip from="420881464" to="420881463#0"/>
+    </personFlow>
+
+    <!-- -420881463#0 <-> -420881464 -->
+    <personFlow id="p_n420881463_0_n420881464" type="ped" begin="0" end="1000" personsPerHour="200" departPos="132.85">
+        <personTrip from="-420881463#0" to="-420881464"/>
+    </personFlow>
+
+    <personFlow id="p_n420881464_n420881463_0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="136.24">
+        <personTrip from="-420881464" to="-420881463#0"/>
+    </personFlow>
+
+    <!-- a-2 -->
+    <!-- 309956784#1 <-> 455689184#1 -->
+    <personFlow id="p_309956784_1_455689184_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="35.85">
+        <personTrip from="309956784#1" to="455689184#1"/>
+    </personFlow>
+
+    <personFlow id="p_455689184_1_309956784_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.74">
+        <personTrip from="455689184#1" to="309956784#1"/>
+    </personFlow>
+
+    <!-- -309956784#1 <-> -455689184#1 -->
+    <personFlow id="p_n309956784_1_n455689184_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="35.85">
+        <personTrip from="-309956784#1" to="-455689184#1"/>
+    </personFlow>
+
+    <personFlow id="p_n455689184_1_n309956784_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.74">
+        <personTrip from="-455689184#1" to="-309956784#1"/>
+    </personFlow>
+
+    <!-- 5672571#1 <-> 418371676#26 -->
+    <personFlow id="p_5672571_1_418371676_26" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.57">
+        <personTrip from="5672571#1" to="418371676#26"/>
+    </personFlow>
+
+    <personFlow id="p_418371676_26_5672571_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="88.51">
+        <personTrip from="418371676#26" to="5672571#1"/>
+    </personFlow>
+
+    <!-- -5672571#1 <-> -418371676#26 -->
+    <personFlow id="p_n5672571_1_n418371676_26" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.57">
+        <personTrip from="-5672571#1" to="-418371676#26"/>
+    </personFlow>
+
+    <personFlow id="p_n418371676_26_n5672571_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="88.51">
+        <personTrip from="-418371676#26" to="-5672571#1"/>
+    </personFlow>
+
+    <!-- a-3 -->
+    <!-- 196116971#1 <-> 455689184#1 -->
+    <personFlow id="p_196116971_1_455689184_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.45">
+        <personTrip from="196116971#1" to="455689184#1"/>
+    </personFlow>
+
+    <personFlow id="p_455689184_1_196116971_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.74">
+        <personTrip from="455689184#1" to="196116971#1"/>
+    </personFlow>
+
+    <!-- -196116971#1 <-> -455689184#1 -->
+    <personFlow id="p_n196116971_1_n455689184_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.45">
+        <personTrip from="-196116971#1" to="-455689184#1"/>
+    </personFlow>
+
+    <personFlow id="p_n455689184_1_n196116971_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.74">
+        <personTrip from="-455689184#1" to="-196116971#1"/>
+    </personFlow>
+
+    <!-- 309956783#1 <-> E23 -->
+    <personFlow id="p_309956783_1_E23" type="ped" begin="0" end="1000" personsPerHour="200" departPos="123.15">
+        <personTrip from="309956783#1" to="E23"/>
+    </personFlow>
+
+    <personFlow id="p_E23_309956783_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="63.30">
+        <personTrip from="E23" to="309956783#1"/>
+    </personFlow>
+
+    <!-- a-4 -->
+    <!-- 196116971#1 <-> 327917960#7 -->
+    <personFlow id="p_196116971_1_327917960_7" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.45">
+        <personTrip from="196116971#1" to="327917960#7"/>
+    </personFlow>
+
+    <personFlow id="p_327917960_7_196116971_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="30.35">
+        <personTrip from="327917960#7" to="196116971#1"/>
+    </personFlow>
+
+    <!-- -196116971#1 <-> -327917960#7 -->
+    <personFlow id="p_n196116971_1_n327917960_7" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.45">
+        <personTrip from="-196116971#1" to="-327917960#7"/>
+    </personFlow>
+
+    <personFlow id="p_n327917960_7_n196116971_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="30.35">
+        <personTrip from="-327917960#7" to="-196116971#1"/>
+    </personFlow>
+
+
+    <!-- 165893413#1 <-> -E12 -->
+    <personFlow id="p_165893413_1_nE12" type="ped" begin="0" end="1000" personsPerHour="200" departPos="69.45">
+        <personTrip from="165893413#1" to="-E12"/>
+    </personFlow>
+
+    <personFlow id="p_nE12_165893413_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="122.13">
+        <personTrip from="-E12" to="165893413#1"/>
+    </personFlow>
+
+
+    <!-- -165893413#1 <-> E12 -->
+    <personFlow id="p_n165893413_1_E12" type="ped" begin="0" end="1000" personsPerHour="200" departPos="69.45">
+        <personTrip from="-165893413#1" to="E12"/>
+    </personFlow>
+
+    <personFlow id="p_E12_n165893413_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="122.13">
+        <personTrip from="E12" to="-165893413#1"/>
+    </personFlow>
+    
+    <!-- a-5 -->
+    <!-- 732794019#12 <-> 732794019#9 -->
+    <personFlow id="p_732794019_12_732794019_9" type="ped" begin="0" end="1000" personsPerHour="200" departPos="37.01">
+        <personTrip from="732794019#12" to="732794019#9"/>
+    </personFlow>
+
+    <personFlow id="p_732794019_9_732794019_12" type="ped" begin="0" end="1000" personsPerHour="200" departPos="33.00">
+        <personTrip from="732794019#9" to="732794019#12"/>
+    </personFlow>
+
+    <!-- -732794019#12 <-> -732794019#9 -->
+    <personFlow id="p_n732794019_12_n732794019_9" type="ped" begin="0" end="1000" personsPerHour="200" departPos="37.01">
+        <personTrip from="-732794019#12" to="-732794019#9"/>
+    </personFlow>
+
+    <personFlow id="p_n732794019_9_n732794019_12" type="ped" begin="0" end="1000" personsPerHour="200" departPos="33.00">
+        <personTrip from="-732794019#9" to="-732794019#12"/>
+    </personFlow>
+
+
+    <!-- 5672656#6 <-> E26 -->
+    <personFlow id="p_5672656_6_E26" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.95">
+        <personTrip from="5672656#6" to="E26"/>
+    </personFlow>
+
+    <personFlow id="p_E26_5672656_6" type="ped" begin="0" end="1000" personsPerHour="200" departPos="86.23">
+        <personTrip from="E26" to="5672656#6"/>
+    </personFlow>
+
+    <!-- 补充1 -->
+    <!-- -309956783#1 <-> -E23 -->
+    <personFlow id="p_n309956783_1_to_nE23" type="ped" begin="0" end="1000" personsPerHour="200" departPos="123.15">
+        <personTrip from="-309956783#1" to="-E23"/>
+    </personFlow>
+
+    <personFlow id="p_nE23_to_n309956783_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="63.30">
+        <personTrip from="-E23" to="-309956783#1"/>
+    </personFlow>
+    <!-- -5672656#6 → -E26 -->
+    <personFlow id="p_n5672656_6_to_nE26" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.96">
+        <personTrip from="-5672656#6" to="-E26"/>
+    </personFlow>
+
+    <personFlow id="p_nE26_to_n5672656_6" type="ped" begin="0" end="1000" personsPerHour="200" departPos="85.98">
+        <personTrip from="-E26" to="-5672656#6"/>
+    </personFlow>
+
+    <!-- -732794019#9 <-> -732794019#6 -->
+    <personFlow id="p_n732794019_9_to_n732794019_6" type="ped" begin="0" end="1000" personsPerHour="200" departPos="33.00">
+        <personTrip from="-732794019#9" to="-732794019#6"/>
+    </personFlow>
+
+    <personFlow id="p_n732794019_6_to_n732794019_9" type="ped" begin="0" end="1000" personsPerHour="200" departPos="34.28">
+        <personTrip from="-732794019#6" to="-732794019#9"/>
+    </personFlow>
+
+
+    <!-- -658579519#1 <-> E30 -->
+    <personFlow id="p_n658579519_1_to_E30" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.77">
+        <personTrip from="-658579519#1" to="E30"/>
+    </personFlow>
+
+    <personFlow id="p_E30_to_n658579519_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="95.58">
+        <personTrip from="E30" to="-658579519#1"/>
+    </personFlow>
+
+
+    <!-- 732794019#9 <-> 732794019#6 -->
+    <personFlow id="p_732794019_9_to_732794019_6" type="ped" begin="0" end="1000" personsPerHour="200" departPos="33.00">
+        <personTrip from="732794019#9" to="732794019#6"/>
+    </personFlow>
+
+    <personFlow id="p_732794019_6_to_732794019_9" type="ped" begin="0" end="1000" personsPerHour="200" departPos="34.28">
+        <personTrip from="732794019#6" to="732794019#9"/>
+    </personFlow>
+
+
+    <!-- 658579519#1 <-> -E30 -->
+    <personFlow id="p_658579519_1_to_nE30" type="ped" begin="0" end="1000" personsPerHour="200" departPos="121.77">
+        <personTrip from="658579519#1" to="-E30"/>
+    </personFlow>
+
+    <personFlow id="p_nE30_to_658579519_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="95.58">
+        <personTrip from="-E30" to="658579519#1"/>
+    </personFlow>
+
+        <!-- 17 -->
+    <!-- 5672019#1 <-> -E34 -->
+    <personFlow id="p_5672019_1_to_nE34" type="ped" begin="0" end="1000" personsPerHour="200" departPos="70.67">
+        <personTrip from="5672019#1" to="-E34"/>
+    </personFlow>
+
+    <personFlow id="p_nE34_to_5672019_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="23.52">
+        <personTrip from="-E34" to="5672019#1"/>
+    </personFlow>
+
+    <!-- -5672019#1 <-> E34 -->
+    <personFlow id="p_n5672019_1_to_E34" type="ped" begin="0" end="1000" personsPerHour="200" departPos="70.67">
+        <personTrip from="-5672019#1" to="E34"/>
+    </personFlow>
+
+    <personFlow id="p_E34_to_n5672019_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="23.52">
+        <personTrip from="E34" to="-5672019#1"/>
+    </personFlow>
+
+    <!-- E2 <-> E4 -->
+    <personFlow id="p_E2_to_E4" type="ped" begin="0" end="1000" personsPerHour="200" departPos="43.19">
+        <personTrip from="E2" to="E4"/>
+    </personFlow>
+
+    <personFlow id="p_E4_to_E2" type="ped" begin="0" end="1000" personsPerHour="200" departPos="20.32">
+        <personTrip from="E4" to="E2"/>
+    </personFlow>
+
+    <!-- -E2 <-> -E4 -->
+    <personFlow id="p_nE2_to_nE4" type="ped" begin="0" end="1000" personsPerHour="200" departPos="43.19">
+        <personTrip from="-E2" to="-E4"/>
+    </personFlow>
+
+    <personFlow id="p_nE4_to_nE2" type="ped" begin="0" end="1000" personsPerHour="200" departPos="20.32">
+        <personTrip from="-E4" to="-E2"/>
+    </personFlow>
+
+        <!-- 18 -->
+    <!-- 420881464 <-> 497250991#2 -->
+    <personFlow id="p_420881464_to_497250991_2" type="ped" begin="0" end="1000" personsPerHour="200" departPos="146.96">
+        <personTrip from="420881464" to="497250991#2"/>
+    </personFlow>
+
+    <personFlow id="p_497250991_2_to_420881464" type="ped" begin="0" end="1000" personsPerHour="200" departPos="26.03">
+        <personTrip from="497250991#2" to="420881464"/>
+    </personFlow>
+
+    <!-- -420881464 <-> -497250991#2 -->
+    <personFlow id="p_n420881464_to_n497250991_2" type="ped" begin="0" end="1000" personsPerHour="200" departPos="146.96">
+        <personTrip from="-420881464" to="-497250991#2"/>
+    </personFlow>
+
+    <personFlow id="p_n497250991_2_to_n420881464" type="ped" begin="0" end="1000" personsPerHour="200" departPos="26.03">
+        <personTrip from="-497250991#2" to="-420881464"/>
+    </personFlow>
+
+    <!-- 195743188#2 <-> -E19 -->
+    <personFlow id="p_195743188_2_to_nE19" type="ped" begin="0" end="1000" personsPerHour="200" departPos="23.85">
+        <personTrip from="195743188#2" to="-E19"/>
+    </personFlow>
+
+    <personFlow id="p_nE19_to_195743188_2" type="ped" begin="0" end="1000" personsPerHour="200" departPos="23.85">
+        <personTrip from="-E19" to="195743188#2"/>
+    </personFlow>
+
+    <!-- -195743188#2 <-> E19 -->
+    <personFlow id="p_n195743188_2_to_E19" type="ped" begin="0" end="1000" personsPerHour="200" departPos="23.85">
+        <personTrip from="-195743188#2" to="E19"/>
+    </personFlow>
+
+    <personFlow id="p_E19_to_n195743188_2" type="ped" begin="0" end="1000" personsPerHour="200" departPos="23.85">
+        <personTrip from="E19" to="-195743188#2"/>
+    </personFlow>
+
+        <!-- 19 -->
+    <!-- E51 <-> E61 -->
+    <personFlow id="p_E51_to_E61" type="ped" begin="0" end="1000" personsPerHour="200" departPos="65.98">
+        <personTrip from="E51" to="E61"/>
+    </personFlow>
+
+    <personFlow id="p_E61_to_E51" type="ped" begin="0" end="1000" personsPerHour="200" departPos="65.47">
+        <personTrip from="E61" to="E51"/>
+    </personFlow>
+
+    <!-- -E51 <-> -E61 -->
+    <personFlow id="p_nE51_to_nE61" type="ped" begin="0" end="1000" personsPerHour="200" departPos="65.98">
+        <personTrip from="-E51" to="-E61"/>
+    </personFlow>
+
+    <personFlow id="p_nE61_to_nE51" type="ped" begin="0" end="1000" personsPerHour="200" departPos="65.47">
+        <personTrip from="-E61" to="-E51"/>
+    </personFlow>
+
+    <!-- -195743187#1 <-> -581134346#4 -->
+    <personFlow id="p_n195743187_1_to_n581134346_4" type="ped" begin="0" end="1000" personsPerHour="200" departPos="43.01">
+        <personTrip from="-195743187#1" to="-581134346#4"/>
+    </personFlow>
+
+    <personFlow id="p_n581134346_4_to_n195743187_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="42.53">
+        <personTrip from="-581134346#4" to="-195743187#1"/>
+    </personFlow>
+
+    <!-- 195743187#1 <-> 581134346#4 -->
+    <personFlow id="p_195743187_1_to_581134346_4" type="ped" begin="0" end="1000" personsPerHour="200" departPos="43.01">
+        <personTrip from="195743187#1" to="581134346#4"/>
+    </personFlow>
+
+    <personFlow id="p_581134346_4_to_195743187_1" type="ped" begin="0" end="1000" personsPerHour="200" departPos="42.53">
+        <personTrip from="581134346#4" to="195743187#1"/>
+    </personFlow>
+
+        <!-- 20 -->
+    <!-- -630828569#0 <-> -E20 -->
+    <personFlow id="p_n630828569_0_to_nE20" type="ped" begin="0" end="1000" personsPerHour="200" departPos="58.28">
+        <personTrip from="-630828569#0" to="-E20"/>
+    </personFlow>
+
+    <personFlow id="p_nE20_to_n630828569_0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="130.00">
+        <personTrip from="-E20" to="-630828569#0"/>
+    </personFlow>
+
+    <!-- 630828569#0 <-> E20 -->
+    <personFlow id="p_630828569_0_to_E20" type="ped" begin="0" end="1000" personsPerHour="200" departPos="58.28">
+        <personTrip from="630828569#0" to="E20"/>
+    </personFlow>
+
+    <personFlow id="p_E20_to_630828569_0" type="ped" begin="0" end="1000" personsPerHour="200" departPos="130.00">
+        <personTrip from="E20" to="630828569#0"/>
+    </personFlow>
+
+    <!-- E19 <-> E36 -->
+    <personFlow id="p_E19_to_E36" type="ped" begin="0" end="1000" personsPerHour="200" departPos="74.17">
+        <personTrip from="E19" to="E36"/>
+    </personFlow>
+
+    <personFlow id="p_E36_to_E19" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.52">
+        <personTrip from="E36" to="E19"/>
+    </personFlow>
+
+    <!-- -E19 <-> -E36 -->
+    <personFlow id="p_nE19_to_nE36" type="ped" begin="0" end="1000" personsPerHour="200" departPos="74.17">
+        <personTrip from="-E19" to="-E36"/>
+    </personFlow>
+
+    <personFlow id="p_nE36_to_nE19" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.52">
+        <personTrip from="-E36" to="-E19"/>
+    </personFlow>
+
+        <!-- 21 -->
+    <!-- -195743187#16 <-> -195743187#13 -->
+    <personFlow id="p_n195743187_16_to_n195743187_13" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.63">
+        <personTrip from="-195743187#16" to="-195743187#13"/>
+    </personFlow>
+
+    <personFlow id="p_n195743187_13_to_n195743187_16" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.19">
+        <personTrip from="-195743187#13" to="-195743187#16"/>
+    </personFlow>
+
+    <!-- 195743187#16 <-> 195743187#13 -->
+    <personFlow id="p_195743187_16_to_195743187_13" type="ped" begin="0" end="1000" personsPerHour="200" departPos="32.63">
+        <personTrip from="195743187#16" to="195743187#13"/>
+    </personFlow>
+
+    <personFlow id="p_195743187_13_to_195743187_16" type="ped" begin="0" end="1000" personsPerHour="200" departPos="36.19">
+        <personTrip from="195743187#13" to="195743187#16"/>
+    </personFlow>
+
+    <!-- -569369534#4 <-> -E56 -->
+    <personFlow id="p_n569369534_4_to_nE56" type="ped" begin="0" end="1000" personsPerHour="200" departPos="59.60">
+        <personTrip from="-569369534#4" to="-E56"/>
+    </personFlow>
+
+    <personFlow id="p_nE56_to_n569369534_4" type="ped" begin="0" end="1000" personsPerHour="200" departPos="61.14">
+        <personTrip from="-E56" to="-569369534#4"/>
+    </personFlow>
+
+    <!-- 569369534#4 <-> E56 -->
+    <personFlow id="p_569369534_4_to_E56" type="ped" begin="0" end="1000" personsPerHour="200" departPos="59.60">
+        <personTrip from="569369534#4" to="E56"/>
+    </personFlow>
+
+    <personFlow id="p_E56_to_569369534_4" type="ped" begin="0" end="1000" personsPerHour="200" departPos="61.14">
+        <personTrip from="E56" to="569369534#4"/>
+    </personFlow>
+
+</routes>

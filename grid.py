@@ -143,11 +143,23 @@ if __name__ == "__main__":
     
     if 'SUMO_HOME' in os.environ:
         sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
-    
-    SUMO_CMD = ["sumo",
-            "-n", "simulation/network.net.xml",
-            "-r", "simulation/routes.rou.xml",
-            "--no-warnings", "true"]
+
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    SIM_DIR = os.path.join(SCRIPT_DIR, "simulation")
+    SUMO_BIN = "/Applications/SUMO sumo-gui.app/Contents/MacOS/SUMO sumo-gui"
+
+    SUMO_CMD = [
+        SUMO_BIN,
+        "-n", os.path.join(SIM_DIR, "network.net.xml"),
+        "-r", os.path.join(SIM_DIR, "routes.rou.xml"),
+        "-a", os.path.join(SIM_DIR, "traffic_light.add.xml"),   
+        "--no-warnings", "true",
+        "--start", 
+]  
+##   SUMO_CMD = ["/Applications/SUMO sumo-gui.app/Contents/MacOS/SUMO sumo-gui",
+##             "-n", "simulation/network.net.xml",
+##             "-r", "simulation/routes.rou.xml",
+##             "--no-warnings", "true"]
     
     # Start SUMO
     traci.start(SUMO_CMD)

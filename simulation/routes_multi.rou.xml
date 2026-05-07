@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    
+    <vType id="car" vClass="passenger" color="1,0,0" accel="2.6" decel="4.5" sigma="0.5" length="5.0" minGap="2.5" maxSpeed="13.89"/>
+    <vType id="ped_normal" vClass="pedestrian" color="0,0,1" width="0.65" length="0.5" jmDriveAfterRedTime="5" jmCrossingGap="5"/>
+    <vType id="ped_jaywalker" vClass="pedestrian" color="1,0,0" width="0.65" length="0.5" jmDriveAfterRedTime="0" jmCrossingGap="2" jmIgnoreFoeProb="0.5" jmIgnoreFoeSpeed="10"/>
+
+    <route id="north_south" edges="north_far_to_near north_near_to_center center_to_south"/>
+    <route id="north_west" edges="north_far_to_near north_near_to_center center_to_west"/>
+    <route id="north_east" edges="north_far_to_near north_near_to_center center_to_east"/>
+    
+    <route id="south_north" edges="south_far_to_near south_near_to_center center_to_north"/>
+    <route id="south_west" edges="south_far_to_near south_near_to_center center_to_west"/>
+    <route id="south_east" edges="south_far_to_near south_near_to_center center_to_east"/>
+    
+    <route id="west_north" edges="west_far_to_near west_near_to_center center_to_north"/>
+    <route id="west_south" edges="west_far_to_near west_near_to_center center_to_south"/>
+    <route id="west_east" edges="west_far_to_near west_near_to_center center_to_east"/>
+    
+    <route id="east_north" edges="east_far_to_near east_near_to_center center_to_north"/>
+    <route id="east_south" edges="east_far_to_near east_near_to_center center_to_south"/>
+    <route id="east_west" edges="east_far_to_near east_near_to_center center_to_west"/>
+    
+    <flow id="flow_N_S" type="car" route="north_south" begin="0" end="3600" number="200" departSpeed="max"/>
+    <flow id="flow_S_N" type="car" route="south_north" begin="0" end="3600" number="200" departSpeed="max"/>
+    <flow id="flow_W_E" type="car" route="west_east" begin="0" end="3600" number="200" departSpeed="max"/>
+    <flow id="flow_E_W" type="car" route="east_west" begin="0" end="3600" number="200" departSpeed="max"/>
+    
+    <flow id="flow_N_E" type="car" route="north_east" begin="0" end="3600" number="50" departSpeed="max"/>
+    <flow id="flow_S_W" type="car" route="south_west" begin="0" end="3600" number="50" departSpeed="max"/>
+    <flow id="flow_E_S" type="car" route="east_south" begin="0" end="3600" number="50" departSpeed="max"/>
+    <flow id="flow_W_N" type="car" route="west_north" begin="0" end="3600" number="50" departSpeed="max"/>
+
+    <personFlow id="ped_N_jaywalk" type="ped_jaywalker" begin="0" end="3600" personsPerHour="100">
+        <walk edges="north_near_to_center center_to_south"/>
+    </personFlow>
+    <personFlow id="ped_S_jaywalk" type="ped_jaywalker" begin="0" end="3600" personsPerHour="100">
+        <walk edges="south_near_to_center center_to_north"/>
+    </personFlow>
+    <personFlow id="ped_E_jaywalk" type="ped_jaywalker" begin="0" end="3600" personsPerHour="80">
+        <walk edges="east_near_to_center center_to_west"/>
+    </personFlow>
+    <personFlow id="ped_W_jaywalk" type="ped_jaywalker" begin="0" end="3600" personsPerHour="80">
+        <walk edges="west_near_to_center center_to_east"/>
+    </personFlow>
+
+</routes>

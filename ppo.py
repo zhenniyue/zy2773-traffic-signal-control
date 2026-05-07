@@ -32,17 +32,43 @@ except ImportError:
 
 # SUMO BINARY DISCOVERY
 
+# def find_sumo_binary(gui=False):
+#     if gui:
+#         candidates = ["/opt/homebrew/bin/sumo-gui", "/usr/local/bin/sumo-gui", "sumo-gui"]
+#     else:
+#         candidates = ["/opt/homebrew/bin/sumo", "/usr/local/bin/sumo", "sumo"]
+
+#     for c in candidates:
+#         if os.path.exists(c) or shutil.which(c):
+#             return c
+#     return "sumo-gui" if gui else "sumo" # Fallback
+
 def find_sumo_binary(gui=False):
+    # 你当前机器上的真实 GUI 可执行文件路径（已验证存在）
+    app_gui = "/Applications/SUMO sumo-gui.app/Contents/MacOS/SUMO sumo-gui"
+
     if gui:
-        candidates = ["/opt/homebrew/bin/sumo-gui", "/usr/local/bin/sumo-gui", "sumo-gui"]
+        candidates = [
+            app_gui,
+            "/opt/homebrew/bin/sumo-gui",
+            "/usr/local/bin/sumo-gui",
+            "sumo-gui",
+        ]
     else:
-        candidates = ["/opt/homebrew/bin/sumo", "/usr/local/bin/sumo", "sumo"]
+        candidates = [
+            # 临时先用 GUI binary 顶上，先把流程跑通（后续再换成真正 sumo）
+            app_gui,
+            "/opt/homebrew/bin/sumo",
+            "/usr/local/bin/sumo",
+            "sumo",
+        ]
 
     for c in candidates:
         if os.path.exists(c) or shutil.which(c):
+            print(f"[DEBUG] Using SUMO binary: {c}")
             return c
-    return "sumo-gui" if gui else "sumo" # Fallback
 
+    raise FileNotFoundError("No SUMO binary found. Please check SUMO installation path.")
 
 # CALLBACKS
 
@@ -112,11 +138,15 @@ class TrafficEnv(gym.Env):
             traci.switch(self.worker_id)
             self.sumo_running = True
             self._setup_subscriptions()
-        except Exception as e:
+        # except Exception as e:
             # Only raise if it's a real startup error, not a label collision
-            if "socket" in str(e) or "connection" in str(e).lower():
-                raise RuntimeError(f"SUMO failed to start: {e}")
+        #     if "socket" in str(e) or "connection" in str(e).lower():
+        #         raise RuntimeError(f"SUMO failed to start: {e}")
 
+#  Change:
+        except Exception as e:
+            print("[DEBUG] SUMO start failed:", repr(e))
+            raise
     def _setup_subscriptions(self):
         traci.trafficlight.setProgram("center", "protective_permitted_paper")
         traci.trafficlight.setPhase("center", 2)
