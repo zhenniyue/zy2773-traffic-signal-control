@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <input>
+        <net-file value="cosmos-map_sidewalk2.net.xml"/>
+        <route-files value="routes_cosmos.rou.xml,randomTrips.rou.xml"/>
+    </input>
+
+    <time>
+        <begin value="0"/>
+        <end value="1000"/>
+    </time>
+
+    <processing>
+        <collision.action value="warn"/>
+        <collision.check-junctions value="true"/>
+        <pedestrian.model value="striping"/>
+        <pedestrian.striping.dawdling value="0.2"/>
+        <pedestrian.striping.jamtime value="10"/>
+    </processing>
+</configuration>
